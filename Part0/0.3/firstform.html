@@ -1,0 +1,72 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>  
+ body {
+  background-color:Coral;
+}
+
+h1 {
+  color:plum;
+  margin-left: 20px;
+  font-family: Sofia, cursive;
+}
+.container{
+	color:brown;
+	font-size:50;
+	font-family:sans-s;
+	text-align:center;
+}
+
+input[type=text], input[type=password] {
+  width: 40%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+input[type="submit"]{
+  background-color: steelblue;
+  color:white;
+  font-size:20px;
+  margin: 10px 0;
+  border-radius:4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+</style>  
+</head>  
+<body>  
+<form name="myform" method="post"  onsubmit="return validateform()" > 
+<table align="center"> 
+<div class="container">  
+  <center>  <h1> Registration Form </h1> </center>  
+<h2 align=right><i>Created by Sindhu</i><h2>
+  <hr>  
+<tr><td>Name:</td><td> <input type="text" name="name"></td></td></tr><br/>  
+<tr><td>Email:</td><td> <input type="text" name="email"></td></td></tr><br>
+<tr><td>Favourite Game:</td><td>
+Cricket<input type="checkbox" name="fgame" value="cricket">
+FootBall<input type="checkbox" name="fgame" value="FootBall">
+Chess<input type="checkbox" name="fgame" value="chess">
+BasketBall<input type="checkbox" name="fgame" value="BasketBall"></td></td></tr><br>
+<tr><td>Gender:</td><td>
+Male<input type="radio" name="rgrp" value="Male">
+Female<input type="radio" name="rgrp" value="Female"></td></td></tr><br>
+<tr><td>Choose your Subject:</td><td>
+<select name="subject">
+<option value="Select">Select</option>
+<option value="C">C</option>
+<option value="C++">C++</option>
+<option value="JAVA">JAVA</option>
+<option value="PYTHON">PYTHON</option>
+</select>
+<tr><td>Address:</td><td><textarea rows = "5" cols = "35" name = "description"></textarea><br></td></tr></td></td></tr>
+<tr><td><td><input type="submit" value="Register"></td></td></tr>
+
+</form>  
+</body>  
+</html> 
