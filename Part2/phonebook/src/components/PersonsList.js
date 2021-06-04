@@ -10,7 +10,7 @@ const Contact = (props) => {
 }
 
 
-const ContactList = (props) => {
+const PersonsList = (props) => {
 
   const contactsToShow = props.contacts.filter(
     contact => contact.name.toLowerCase().includes(props.filter.toLowerCase())
@@ -27,4 +27,4 @@ const ContactList = (props) => {
   )
 }
 
-export default ContactList
+export default PersonsList
