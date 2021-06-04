@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ContactList from './components/ContactList'
 import Filter from './components/Filter'
 import InputForm from './components/InputForm'
-import phoneNumberService from './services/phoneNumbers'
+import phoneService from './services/phone'
 import Notification from './components/Notification'
 
 
@@ -18,7 +18,7 @@ const App = () => {
   const handleNameChange = (event) => { setNewName(event.target.value) }
   const handleNumberChange = (event) => { setNewNumber(event.target.value) }
 
-  const hook = () => { phoneNumberService.getAll().then(response => setContacts(response.data)) }
+  const hook = () => { phoneService.getAll().then(response => setContacts(response.data)) }
   useEffect(hook, [])
 
   const messageDisplayTime = 3000 
@@ -53,11 +53,11 @@ const App = () => {
       const msg = `Contact ${newName} is already in the phonebook. Do you want to replace the old contact?`
       const confirm = window.confirm(msg)
       if (confirm) {
-        phoneNumberService.update(sameName[0].id, contactObject).then(hook)
+        phoneService.update(sameName[0].id, contactObject).then(hook)
         .then(() => {updateNotificationFunction(newName)}).catch(error => {errorNotificationFunction()})
       }
     } else {
-      phoneNumberService.create(contactObject).then(
+      phoneService.create(contactObject).then(
         response => {setContacts(contacts.concat(response.data))}
       ).then(() => {addNotificationFunction(newName)})
       .catch(error => {errorNotificationFunction()})
@@ -71,7 +71,7 @@ const App = () => {
     const button = event.target
     const confirm = window.confirm(`Delete ${button.name}?`);
     if (confirm) {
-      phoneNumberService.destroy(button.id).then(hook)
+      phoneService.destroy(button.id).then(hook)
       .then(() => {deleteNotificationFunction(button.name)})
       .catch(error => {errorNotificationFunction()})
     }
