@@ -1,7 +1,69 @@
+
+// import './App.css';
+// import Course from './components/Course'
+// const App = () => {
+//   const courses = [
+//     {
+//     id: 1,
+//     name: 'Half Stack application development',
+//     parts: [
+//       {
+//         name: 'Fundamentals of React',
+//         exercises: 10,
+//         id: 1
+//       },
+//       {
+//         name: 'Using props to pass data',
+//         exercises: 7,
+//         id: 2
+//       },
+//       {
+//         name: 'State of a component',
+//         exercises: 14,
+//         id: 3
+//       },
+//       {
+//         name:'Redux',
+//         exercises:11,
+//         id: 4
+//       }
+//     ]
+//   },
+//   {
+//     name: 'Node.js',
+//     id: 2,
+//     parts: [
+//       {
+//         name: 'Routing',
+//         exercises: 3,
+//         id: 1
+//       },
+//       {
+//         name: 'Middlewares',
+//         exercises: 7,
+//         id: 2
+//       }
+//     ]
+//   }
+// ]
+
+
+//   return (
+//     <div>
+//       <h1>Web development Curriculum</h1>
+//       {courses.map(course=>
+//       <Course course={course}key= {course.id}/>)}
+//     </div>
+//   )
+// }
+
+// export default App;
+
+
 import React, { useState, useEffect } from 'react'
-import ContactList from './components/ContactList'
+import PersonsList from './components/PersonsList'
 import Filter from './components/Filter'
-import InputForm from './components/InputForm'
+import PersonForm from './components/PersonForm'
 import phoneService from './services/phone'
 import Notification from './components/Notification'
 
@@ -84,13 +146,13 @@ const App = () => {
       <Filter value={newFilter} onChange={handleFilterChange}></Filter>
 
       <h2>Add new</h2>
-      <InputForm
+      <PersonForm
         addObject={addContact} newName={newName} handleNameChange={handleNameChange}
         newNumber={newNumber} handleNumberChange={handleNumberChange}>
-      </InputForm>
+      </PersonForm>
 
       <h2>Numbers</h2>
-      <ContactList contacts={contacts} filter={newFilter} deleteFun={deleteContact}></ContactList>
+      <PersonsList contacts={contacts} filter={newFilter} deleteFun={deleteContact}></PersonsList>
     </div>
   )
 
